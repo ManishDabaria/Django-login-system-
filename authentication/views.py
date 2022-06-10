@@ -59,17 +59,16 @@ def signup(request):
         myuser.last_name = lname
         myuser.is_active = False     # User account will not be activited
         myuser.save()
-
         messages.success(request, "Your Account has been successfully created, We have sent you a confirmation email, please confirm your email in order to activate your account.")
 
         #  Welcome Email
 
-        subject ="Welcome to LANA - Django Login!!"
+        subject ="Welcome to LANA - Django Login!! This is my project "
         message = "Hello" + myuser.first_name + "!! \n" + " Welcome to TicToe!! \n Thank you for you visiting our website\n We have also sent you a confirmation email, please confirm your email address in order to activate your account. \n\n Thanking You\n Manish Dabaria"
         from_email = settings.EMAIL_HOST_USER
         to_list = [myuser.email] 
         send_mail(subject, message, from_email, to_list, fail_silently=True)
-        
+
 
         return redirect('signin')
 
