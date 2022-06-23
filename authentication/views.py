@@ -36,11 +36,11 @@ def signup(request):
         # Code for USER will not create same account 
         if User.objects.filter(username=username):
             messages.error(request, " Usernme already exist! Please try some other username")
-            return redirect('home')
+            return redirect('home') 
 
         if User.objects.filter(email=email):
             messages.error(request, "Email already registered!")
-            return redirect('home')
+            return redirect('home') 
         
         if len(username)>10:
             messages.error(request, "Username must be under 10 characters")
@@ -99,3 +99,9 @@ def signout(request):
     logout(request)
     messages.success(request, "Logged Out Successfully")
     return redirect('home')
+
+
+
+
+
+# I want to somethings here
