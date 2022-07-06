@@ -61,7 +61,7 @@ def signup(request):
         myuser.save()
         messages.success(request, "Your Account has been successfully created, We have sent you a confirmation email, please confirm your email in order to activate your account.")
 
-        #  Welcome Email
+        #  From here Welcome Email Code start
 
         subject ="Welcome to LANA - Django Login!! This is my project "
         message = "Hello" + myuser.first_name + "!! \n" + " Welcome to TicToe!! \n Thank you for you visiting our website\n We have also sent you a confirmation email, please confirm your email address in order to activate your account. \n\n Thanking You\n Manish Dabaria"
